@@ -1,12 +1,14 @@
-import { DatabaseConfig } from '@config/database.config';
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { MongooseModule, MongooseModuleOptions } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    TypeOrmModule.forRootAsync({
-      useFactory() {
-        return DatabaseConfig;
+    MongooseModule.forRootAsync({
+      imports: [],
+      inject: [],
+      useFactory: async (): Promise<MongooseModuleOptions> => {
+        const uri = 'your-uri';
+        return { uri };
       },
     }),
   ],

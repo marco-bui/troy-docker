@@ -1,23 +1,6 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:14.15
-    container_name: troy-database
-    restart: unless-stopped
-    ports:
-      - "5445:5432"
-    networks:
-      troy:
-        ipv4_address: 172.220.117.2
-    volumes:
-      - ./docker/data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: troy
-      POSTGRES_USER: troy
-      POSTGRES_PASSWORD: troyofme
-
-
   backend:
     image: troy
     build: .

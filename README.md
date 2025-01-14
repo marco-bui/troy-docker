@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository with common database docker compose.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository with common database docker compose. With mongo db, please use Atlas. Mongo docker doesn't support replica.
 
 ## Installation
 
